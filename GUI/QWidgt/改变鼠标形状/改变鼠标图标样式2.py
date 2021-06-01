@@ -3,12 +3,6 @@ import sys
 
 
 
-
-
-
-
-
-
 app = QApplication(sys.argv)
 window = QWidget()
 window.resize(500 ,500)
