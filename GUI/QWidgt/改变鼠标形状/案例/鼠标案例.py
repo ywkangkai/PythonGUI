@@ -55,3 +55,25 @@ app = QApplication(sys.argv)
 window = Windows2()
 window.show()
 sys.exit(app.exec())
+
+
+
+
+# class Windows2(QWidget):
+#     def __init__(self):
+#         super().__init__()
+#         self.resize(500, 500)
+#         self.move(300, 300)
+#         #self.setMouseTracking(True)   把这句话注释后可实现通过拖拽改变鼠标位置
+#
+#
+#     def mouseMoveEvent(self, QMouseEvent):
+#
+#         self.move(QMouseEvent.globalPos().x(), QMouseEvent.globalPos().y())
+#
+#
+#
+# app = QApplication(sys.argv)
+# window = Windows2()
+# window.show()
+# sys.exit(app.exec())
