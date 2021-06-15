@@ -10,7 +10,7 @@ class Window(QWidget):
 app = QApplication(sys.argv)
 window = Window()
 window.resize(500, 500)
-window.setMouseTracking(True) #如果不加这句话，需要鼠标左键一直点住在移动才会触发上面的事件
+window.setMouseTracking(False) #如果不加这句话或者为False，需要鼠标左键移动至控件内然后一直点住再移动才会触发上面的事件
 
 
 
