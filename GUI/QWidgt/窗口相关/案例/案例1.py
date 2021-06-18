@@ -13,17 +13,17 @@ import sys
 # window.setWindowFlag(Qt.FramelessWindowHint)
 # window_w = window.width()
 #
-# close_btn = QPushButton(window)
+# close_btn = 按钮类型(window)
 # close_btn.setText("关闭")
 # close_w = window_w - btn_w
 # close_btn.move(close_w, top_margin)
 #
-# max_btn = QPushButton(window)
+# max_btn = 按钮类型(window)
 # max_w = close_w - btn_w
 # max_btn.setText("最大化")
 # max_btn.move(max_w, top_margin)
 #
-# mini_btn = QPushButton(window)
+# mini_btn = 按钮类型(window)
 # mini_w = max_w - btn_w
 # mini_btn.setText("最小化")
 # mini_btn.move(mini_w, top_margin)
