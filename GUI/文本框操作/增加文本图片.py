@@ -15,3 +15,4 @@ line.addAction(action, QLineEdit.TrailingPosition)
 
 window.show()
 sys.exit(app.exec_())
+#
