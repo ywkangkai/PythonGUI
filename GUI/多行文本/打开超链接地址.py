@@ -33,6 +33,8 @@ class Window(QWidget):
 
     def cao(self):
         self.text.insertHtml('<a href="www.baidu.com">百度</a>')
+        tc = self.text.textCursor()
+        print(tc.block().text())
 
     def textChange(self):
         print('文本发生改变')
