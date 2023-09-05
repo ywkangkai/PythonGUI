@@ -1,23 +1,15 @@
 from PyQt5.Qt import *
 
 
-# 大于9，向上不可按，小于0向下不可按
+# 获取文本内容
 class MyASB(QAbstractSpinBox):
     def __init__(self, parent=None, num ="0", *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         self.lineEdit().setText(num)
 
     def stepEnabled(self):
-        # 0 -- 9
-        current_num = int(self.text())
-        if current_num == 0:
-            return QAbstractSpinBox.StepUpEnabled # StepUpEnabled表示步长调节器的上按钮可用
-        elif current_num == 9:
-            return QAbstractSpinBox.StepDownEnabled # StepDownEnabled表示步长调节器的下按钮可用
-        elif current_num < 0 or current_num > 9:
-            return QAbstractSpinBox.StepNone # StepNone表示步长调节器的上下按钮都不可用
-        else:
-            return QAbstractSpinBox.StepUpEnabled | QAbstractSpinBox.StepDownEnabled # StepUpEnabled | StepDownEnabled表示步长调节器的上下按钮都可用
+
+        return QAbstractSpinBox.StepUpEnabled | QAbstractSpinBox.StepDownEnabled # StepUpEnabled | StepDownEnabled表示步长调节器的上下按钮都可用
 
     def stepBy(self, p_int): #stepBy()方法用于设置步长调节器的步长
         print(p_int) #如果stepEnabled()方法返回的是StepUpEnabled，那么p_int就是1，如果返回的是StepDownEnabled，那么p_int就是-1
@@ -39,10 +31,25 @@ class Window(QWidget):
         asb.move(100, 100)
 
         # self.asb.editingFinished.connect(lambda :print("结束编辑"))
-        # test_btn = QPushButton(self)
-        # test_btn.move(200, 200)
-        # test_btn.setText("测试按钮")
-        # test_btn.clicked.connect(self.btn_test)
+        test_btn = QPushButton(self)
+        test_btn.move(200, 200)
+        test_btn.setText("测试按钮")
+        test_btn.clicked.connect(self.btn_test)
+
+    def btn_test(self):
+        print(self.asb.lineEdit().text()) # 获取文本内容
+        # print(self.asb.lineEdit().setText("88")) # 设置文本内容
+        # cl = QCompleter(["sz", "123", "18"], self.asb)
+        # self.asb.lineEdit().setCompleter(cl)
+        # # self.asb.lineEdit().setAlignment(Qt.AlignCenter)
+        # self.asb.setAlignment(Qt.AlignCenter) #
+
+
+        # print(self.asb.hasFrame())
+        # self.asb.setFrame(False)
+
+        # self.asb.clear()
+        # self.asb.setButtonSymbols(QAbstractSpinBox.NoButtons)
 
 
 

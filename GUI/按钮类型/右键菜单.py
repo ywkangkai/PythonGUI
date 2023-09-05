@@ -32,9 +32,5 @@ window = Window()
 window.resize(500, 500)
 btn = QPushButton('file',window)
 
-
-
-
-
 window.show()
 sys.exit(app.exec())

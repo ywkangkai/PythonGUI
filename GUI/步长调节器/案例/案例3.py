@@ -1,23 +1,15 @@
 from PyQt5.Qt import *
 
 
-# 大于9，向上不可按，小于0向下不可按
+# 设置只读
 class MyASB(QAbstractSpinBox):
     def __init__(self, parent=None, num ="0", *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         self.lineEdit().setText(num)
 
     def stepEnabled(self):
-        # 0 -- 9
-        current_num = int(self.text())
-        if current_num == 0:
-            return QAbstractSpinBox.StepUpEnabled # StepUpEnabled表示步长调节器的上按钮可用
-        elif current_num == 9:
-            return QAbstractSpinBox.StepDownEnabled # StepDownEnabled表示步长调节器的下按钮可用
-        elif current_num < 0 or current_num > 9:
-            return QAbstractSpinBox.StepNone # StepNone表示步长调节器的上下按钮都不可用
-        else:
-            return QAbstractSpinBox.StepUpEnabled | QAbstractSpinBox.StepDownEnabled # StepUpEnabled | StepDownEnabled表示步长调节器的上下按钮都可用
+
+        return QAbstractSpinBox.StepUpEnabled | QAbstractSpinBox.StepDownEnabled # StepUpEnabled | StepDownEnabled表示步长调节器的上下按钮都可用
 
     def stepBy(self, p_int): #stepBy()方法用于设置步长调节器的步长
         print(p_int) #如果stepEnabled()方法返回的是StepUpEnabled，那么p_int就是1，如果返回的是StepDownEnabled，那么p_int就是-1
@@ -37,6 +29,7 @@ class Window(QWidget):
         self.asb = asb
         asb.resize(100, 30)
         asb.move(100, 100)
+        asb.setReadOnly(True) # 设置步长调节器只读,不可编辑，但是可以点击加减按钮
 
         # self.asb.editingFinished.connect(lambda :print("结束编辑"))
         # test_btn = QPushButton(self)

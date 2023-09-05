@@ -24,10 +24,10 @@ class Window(QWidget):
         self.city = QComboBox(self)
         self.city.move(200, 100)
         #监听省下拉列表里面的当前值发生改变的信号
-        pro.currentTextChanged[str].connect(self.pro_changed)
+        pro.currentTextChanged[str].connect(self.pro_changed) # 传str表示key
 
         #监听城市下拉列表里面的当前值发生改变的信号
-        self.city.currentIndexChanged[int].connect(self.city_changed)
+        self.city.currentIndexChanged[int].connect(self.city_changed) # 传int表示索引
 
         pro.addItems(self.city_dict.keys())
 
@@ -42,7 +42,7 @@ class Window(QWidget):
     def city_changed(self,city_index):
         #print(city_index)  值为-1
         if city_index != -1:  # 这里不做判断会打印none
-            print(self.city.itemData(city_index))
+            print(self.city.itemData(city_index)) # itemData可以获取当前选项的额外值
 
 
 app = QApplication(sys.argv)

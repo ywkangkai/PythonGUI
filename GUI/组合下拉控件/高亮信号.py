@@ -20,10 +20,7 @@ class Window(QWidget):
         self.asb.addItem('这是data获取的', {"name":"123"})
         self.asb.insertItem(1, 'xxx')   #  第一关参数为索引
         self.asb.insertSeparator(1) # 在索引1前插入分割线
-        # 可编辑
-        self.asb.setEditable(True)   #  此属性可以使选项框变为可编辑
-        self.asb.activated[str].connect(self.actived)   #  可在页面输入内容，按下回车，会自动打印出输入的内容
-        #self.asb.activated.connect(self.actived)  #  此信号是当选择了下拉中的值，会自动打印值的索引
+        self.asb.highlighted.connect(lambda val:print('高亮',val))  #  此信号是当鼠标移动到下拉框中的值时，会自动打印值的索引
 
 
     def actived(self,val):

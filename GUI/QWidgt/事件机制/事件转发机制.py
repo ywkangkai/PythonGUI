@@ -16,10 +16,6 @@ class Lable(QLabel):
     def mousePressEvent(self, QMouseEvent):
         print('标签控件被按下')
 
-
-
-
-
 app = QApplication(sys.argv)
 window = Window()
 window.resize(500,500)

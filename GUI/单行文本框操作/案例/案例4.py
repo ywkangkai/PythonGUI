@@ -40,7 +40,7 @@ class AgeVadidator(QValidator):
 
 class MyAgeVadidator(QIntValidator):
     def fixup(self, p_str):
-        if int(p_str) < 18 or len(p_str) == 0:
+        if  len(p_str) == 0 or int(p_str) < 18:
             return 18
 
 class Window(QWidget):
