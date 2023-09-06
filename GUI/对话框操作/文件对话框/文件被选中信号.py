@@ -16,7 +16,7 @@ class Window(QWidget):
             fd.fileSelected.connect(lambda file:print(file))
             fd.setNameFilters(['(*.*)', '(*.png)', '(*.jpg)' , '(*.py)'])  #设置文件过滤形式
 
-            #fd.setFileMode(QFileDialog.ExistingFile)  # 设置选择单个文件
+            #fd.setFileMode(QFileDialog.ExistingFile)  # 设置选择单个文件 setFileMode()方法有三种模式，分别是：ExistingFile、Directory、ExistingFiles表示选择单个文件、选择文件夹、选择多个文件
             fd.setFileMode(QFileDialog.ExistingFiles)  # 设置可以选择多个文件
 
             #fd.fileSelected.connect(lambda val:print(val))  # 选择单个文件触发

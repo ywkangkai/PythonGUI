@@ -17,9 +17,9 @@ class Window(QWidget):
             cd.setWindowTitle('选择背景颜色')
 
             def sel_color(color):
-                palette = QPalette()
+                palette = QPalette() # QPalette是一个调色板类，用于设置控件的颜色
                 palette.setColor(QPalette.Background, color)
-                self.setPalette(palette)
+                self.setPalette(palette) # setPalette()方法用于设置控件的调色板
 
             #cd.colorSelected.connect(sel_color)  # 用它就不要用cd.setOption(QColorDialog.NoButtons)
             cd.currentColorChanged.connect(sel_color)  # 选择颜色后会实时展示，需要与上方的cd.setOption(QColorDialog.NoButtons)一起用
