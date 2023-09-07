@@ -10,8 +10,8 @@ class Window(QWidget):
 
     def setup_ui(self):
         input = QInputDialog(self,Qt.FramelessWindowHint)
-        input.setOption(QInputDialog.UseListViewForComboBoxItems)
-        #input.setInputMode(QInputDialog.DoubleInput)  #表示只能输入浮点型
+        input.setComboBoxItems(['18','19','20'])
+        # input.setInputMode(QInputDialog.DoubleInput)  #表示只能输入浮点型
         #input.setInputMode(QInputDialog.InputMode)  #表示只能输入整数
         input.setInputMode(QInputDialog.TextInput) #表示只能输入文本
         input.setLabelText('请输入你的姓名')

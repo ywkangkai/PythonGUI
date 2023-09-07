@@ -9,10 +9,8 @@ class Window(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        pb = QProgressBar(self)
-
-        pb.setRange(0,0) #设置范围为0-0，表示进度条繁忙
-
+        em = QMessageBox(QMessageBox.Warning, '警告', '具体提示的内容', QMessageBox.Yes | QMessageBox.No, self)
+        em.open()
 
 app = QApplication(sys.argv)
 window = Window()
