@@ -32,6 +32,20 @@ class Window(QWidget):
         layout.addWidget(label2)
         layout.addWidget(label3)
 
+        '''
+        BottomToTop = 3
+        LeftToRight = 0
+        RightToLeft = 1
+        TopToBottom = 2
+        '''
+
+
+        timer = QTimer(self)
+        def test():
+            layout.setDirection((layout.direction() + 1) % 4)
+        timer.timeout.connect(test)
+        timer.start(1000)
+
 
 
 

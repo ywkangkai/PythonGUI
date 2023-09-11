@@ -25,7 +25,8 @@ class Window(QWidget):
         v_layout.addWidget(label2)
         v_layout.addWidget(label3)
         self.setLayout(v_layout)
-        v_layout.setSpacing(60)  #设置间距
+        v_layout.setContentsMargins(20,20,20,20)  #设置外边距
+        v_layout.setSpacing(60)  #设置控件之间的间距
 
 
 
