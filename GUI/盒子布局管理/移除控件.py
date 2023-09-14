@@ -28,7 +28,7 @@ class Window(QWidget):
         layout.addWidget(label3)
 
         layout.removeWidget(label1)
-        label1.setParent(None)
+        label1.setParent(None) #移除的控件要设置父控件为None是因为，如果不设置，那么这个控件还是会显示在界面上，只是不在布局管理器中了
 
 
 

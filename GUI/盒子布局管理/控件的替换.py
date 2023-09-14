@@ -35,7 +35,7 @@ class Window(QWidget):
         layout.addWidget(label3)
 
         layout.replaceWidget(label2,label4)  #替换控件
-        label2.hide()  #隐藏控件
+        label2.hide()  #隐藏控件 但是控件还在布局管理器中，只是不显示了
 
 
 

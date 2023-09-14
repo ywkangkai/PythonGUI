@@ -20,7 +20,7 @@ class Window(QWidget):
         timer.timeout.connect(lambda :label1.setText(label1.text()+'kkkk\n'))
         timer.start(1000)
 
-        v_layout = QVBoxLayout()  #垂直布局对象
+        v_layout = QBoxLayout(QBoxLayout.TopToBottom)  #垂直布局对象
         v_layout.addWidget(label1)
         v_layout.addWidget(label2)
         v_layout.addWidget(label3)
@@ -38,7 +38,7 @@ class Window(QWidget):
         h_layout.addWidget(label5)
         h_layout.addWidget(label6)
 
-        v_layout.insertLayout(2,h_layout)
+        v_layout.insertLayout(2, h_layout) # 2表示索引位置
 
 
 
