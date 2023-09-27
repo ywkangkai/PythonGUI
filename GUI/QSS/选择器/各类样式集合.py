@@ -20,7 +20,9 @@ class Window(QWidget):
         # box2.setStyleSheet('background-color: red;')
 
         label1 = QLabel('标签1', box1)
+        label1.resize(200, 200)
         label1.setObjectName('l1')
+        label1.setProperty('notice_level', 'error')
         label1.move(50,50)
         btn1 = QPushButton('按钮1', box1)
         btn1.move(150, 50)

@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="register">
+    <file>images/497a333da990df27c36c06e9cb90f12.png</file>
+    <file>images/bj.png</file>
+  </qresource>
+  <qresource prefix="login">
+    <file>images/close.png</file>
+    <file>images/open.png</file>
+  </qresource>
+</RCC>

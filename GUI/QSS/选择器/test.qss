@@ -1,3 +1,15 @@
+/*# id选择器*/
+/*#l1{*/
+/*    background-color: orange;*/
+/*}*/
+
+/*选择多个*/
+/*#l1,#l2{*/
+/*    background-color: orange;*/
+/*}*/
+
+
+/*QLabel#l1 指定了控件的id*/
 QLabel#l1 {
     background-color: orange;
 }
@@ -9,4 +21,25 @@ QLabel#l1:hover {
 QPushButton#b1 {
     background-color: red;
 }
+
+/*QPushButton 控件选择器，相当于标签，*/
+
+/*QPushButton {*/
+/*    background-color: red;*/
+/*}*/
+
+/*. 类选择器*/
+.QLabel {
+    background-color: yellow;
+}
+
+/*指定属性等于什么*/
+.QLabel[notice_level='error'] {
+    border: 3px solid red;
+}
+
+/*表示多选框选中状态后触发*/
+/*QCheckBox::indicator:checked {*/
+/*    image:url(xxx.png);*/
+/*}*/
 
